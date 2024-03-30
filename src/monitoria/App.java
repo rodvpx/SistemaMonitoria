@@ -33,7 +33,7 @@ public class App {
                     break;
 
                 case 1:
-                    if (Usuario.fazerLogin()) {
+                    if (Usuario.fazerLogin(sc)) {
                         System.out.println("Login bem-sucedido");
                     } else {
                         System.out.println("Falha no login.");
@@ -41,8 +41,8 @@ public class App {
                     break;
 
                 case 2:
-                    Usuario.cadastrarNovoUsuario();
-                    System.out.println("Usuario cadastrado com sucesso!");
+                    Usuario.cadastrarNovoUsuario(sc);
+                    Usuario.imprimeLista();
                     break;
 
                 default:

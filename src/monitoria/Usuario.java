@@ -18,22 +18,29 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public static Usuario cadastrarNovoUsuario() {
-		Scanner scanner = new Scanner(System.in);
+	public static Usuario cadastrarNovoUsuario(Scanner sc) {
 
 		System.out.print("Nome: ");
-		String nome = scanner.nextLine();
+		String nome = sc.nextLine();
 		System.out.print("Email: ");
-		String email = scanner.nextLine();
+		String email = sc.nextLine();
 		System.out.print("Senha: ");
-		String senha = scanner.nextLine();
+		String senha = sc.nextLine();
 
 		Usuario novoUsuario = new Usuario(nome, email, senha);
-		usuariosCadastrados.add(novoUsuario); // Adiciona o novo usuário à lista
 
-		scanner.close();
+		if (buscarUsuarioPorEmail(email) != null) { // faz a busca pelo email, pra saber se existe usuario cadastrado
+													// com esse email
+			System.out.println("Usuario já existente");// caso já aja usuario com esse email, ele não é adicionado a
+														// lista
 
+		} else {
+			// caso não aja usuario com o email, novo usuario é adicionado a lista
+			usuariosCadastrados.add(novoUsuario); // Adiciona o novo usuário à lista
+			System.out.println("Usuario cadastrado com sucesso!");
+		}
 		return novoUsuario;
+
 	}
 
 	public boolean login(String email, String senha) {
@@ -53,15 +60,12 @@ public class Usuario {
 		}
 	}
 
-	public static boolean fazerLogin() {
-		Scanner scanner = new Scanner(System.in);
+	public static boolean fazerLogin(Scanner sc) {
 
 		System.out.print("Email: ");
-		String email = scanner.nextLine();
+		String email = sc.nextLine();
 		System.out.print("Senha: ");
-		String senha = scanner.nextLine();
-
-		scanner.close();
+		String senha = sc.nextLine();
 
 		Usuario usuario = buscarUsuarioPorEmail(email);
 
@@ -80,6 +84,15 @@ public class Usuario {
 			}
 		}
 		return null; // Usuário não encontrado
+	}
+
+	public static void imprimeLista() {
+
+		for (Usuario usuario : usuariosCadastrados) {
+			System.out.println(usuario.getEmail());
+
+		}
+
 	}
 
 	public String getNome() {
