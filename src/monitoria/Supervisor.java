@@ -2,6 +2,11 @@ package monitoria;
 
 public class Supervisor extends Usuario {
 	
+	public Supervisor(String nome, String email, String senha) {
+		super(nome, email, senha);
+
+	}
+
 	private String departamento;
 	Monitor monitor;
 	Monitor disciplina;

@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 public class Monitor extends Aluno {
 	
+	public Monitor(String nome, String email, String senha) {
+		super(nome, email, senha);
+		
+	}
+
 	private ArrayList<String> disciplina;
 	private Horario horario;
 	private Local local;

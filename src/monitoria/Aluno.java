@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class Aluno extends Usuario {
 	
+	public Aluno(String nome, String email, String senha) {
+		super(nome, email, senha);
+	}
+
 	private String matricula;
 	private Monitoria monitoria;
 	
