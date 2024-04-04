@@ -33,12 +33,12 @@ public class App {
                     break;
 
                 case 1:
-                    Usuario.fazerLogin(sc);
+                    //Usuario.fazerLogin(sc);
                     break;
 
                 case 2:
-                    Usuario.cadastrarNovoUsuario(sc);
-                    Usuario.imprimeLista();
+                    Aluno aluno = new Aluno("Lucas", "admin", "admin", "1234567898");
+                    aluno.cadastrarNovoUsuario();
                     break;
 
                 default:
