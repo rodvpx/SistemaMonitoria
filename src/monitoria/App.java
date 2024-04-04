@@ -33,11 +33,7 @@ public class App {
                     break;
 
                 case 1:
-                    if (Usuario.fazerLogin(sc)) {
-                        System.out.println("Login bem-sucedido");
-                    } else {
-                        System.out.println("Falha no login.");
-                    }
+                    Usuario.fazerLogin(sc);
                     break;
 
                 case 2:
