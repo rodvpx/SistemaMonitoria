@@ -7,7 +7,9 @@ public class Aluno extends Usuario {
 	private String matricula;
 	private Monitoria monitoria;
 
-	public Aluno(String nome, String email, String senha, String matricula) {
+	private ArrayList<Aluno> alunos = new ArrayList<>();
+
+	public Aluno(String matricula, String nome, String email, String senha) {
 		super(nome, email, senha);
 		this.matricula = matricula;
 
@@ -25,6 +27,24 @@ public class Aluno extends Usuario {
 			}
 		} catch (NumberFormatException e) {
 			System.out.println("ERRO: Por favor, digite somente números na MATRÍCULA.");
+		}
+
+		for (Aluno email : alunos) {
+			if (email.equals(this.email)) {
+				System.out.println("ERRO: Este email/usuario já existe.");
+				break;
+			}
+		}
+
+		Aluno novoAluno = new Aluno(nome, email, senha, matricula);
+
+		alunos.add(novoAluno);
+
+	}
+
+	public void realizarLoginParaTodosAluno(String email, String senha) {
+		for (Aluno aluno : alunos) {
+			aluno.login(email, senha);
 		}
 	}
 

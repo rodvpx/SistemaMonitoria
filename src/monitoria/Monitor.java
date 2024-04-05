@@ -3,15 +3,15 @@ package monitoria;
 import java.util.ArrayList;
 
 public class Monitor extends Aluno {
-	
-	public Monitor(String nome, String email, String senha) {
-		super(nome, email, senha);
-		
-	}
 
 	private ArrayList<String> disciplina;
 	private Horario horario;
 	private Local local;
+
+	public Monitor(String matricula, String nome, String email, String senha) {
+		super(matricula, nome, email, senha);
+		//TODO Auto-generated constructor stub
+	}
 	
 	public void definirHorario(Aluno disciplina, Horario horario, Local local) {
 		
@@ -44,7 +44,4 @@ public class Monitor extends Aluno {
 	public void setLocal(Local local) {
 		this.local = local;
 	}
-	
-	
-
 }

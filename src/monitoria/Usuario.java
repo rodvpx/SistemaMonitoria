@@ -6,7 +6,6 @@ public abstract class Usuario {
 	protected String email;
 	protected String senha;
 
-
 	public Usuario(String nome, String email, String senha) {
 		this.nome = nome;
 		this.email = email;
@@ -15,7 +14,7 @@ public abstract class Usuario {
 
 	public boolean login(String email, String senha) {
 
-		if (email == null || senha == null || (email.equals("") || senha.equals(""))) {
+		if ((email == null || email.isEmpty()) && (senha == null || senha.isEmpty())) {
 			System.out.println("ERRO: Login não pode ser vazio.");
 			return false;
 		}

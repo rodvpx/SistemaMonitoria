@@ -9,6 +9,8 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
+        Aluno aluno = null;
+
         int option = 0;
 
         do {
@@ -33,11 +35,23 @@ public class App {
                     break;
 
                 case 1:
-                    //Usuario.fazerLogin(sc);
+                    System.out.println("Informe o email/user:");
+                    String email = sc.nextLine();
+                    System.out.println("Informe a senha:");
+                    String senha = sc.nextLine();
+                    aluno.realizarLoginParaTodosAluno(email, senha);
                     break;
 
                 case 2:
-                    Aluno aluno = new Aluno("Lucas", "admin", "admin", "1234567898");
+                    System.out.println("Informe a matricula:");
+                    String m = sc.nextLine();
+                    System.out.println("Informe o nome:");
+                    String n = sc.nextLine();
+                    System.out.println("Informe o email:");
+                    String e = sc.nextLine();
+                    System.out.println("Informe a senha:");
+                    String s = sc.nextLine();
+                    aluno = new Aluno(m, n, e, s);
                     aluno.cadastrarNovoUsuario();
                     break;
 
