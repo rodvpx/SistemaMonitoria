@@ -2,17 +2,27 @@ package monitoria;
 
 public class Supervisor extends Usuario {
 	
+	public Supervisor(String matricula, String nome, String email, String senha) {
+		super(matricula, nome, email, senha);
+		//TODO Auto-generated constructor stub
+	}
+
 	private String departamento;
 	Monitor monitor;
 	Monitor disciplina;
 
-	public Supervisor(String nome, String email, String senha) {
-		super(nome, email, senha);
-		//TODO Auto-generated constructor stub
-	}
+	
 
 	@Override
-	protected void cadastrarNovoUsuario() {
+	protected boolean validar() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'validar'");
+	}
+
+
+
+	@Override
+	protected boolean cadastrarNovoUsuario() {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'cadastrarNovoUsuario'");
 	}
