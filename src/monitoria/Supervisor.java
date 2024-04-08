@@ -19,14 +19,6 @@ public class Supervisor extends Usuario {
 		throw new UnsupportedOperationException("Unimplemented method 'validar'");
 	}
 
-
-
-	@Override
-	protected boolean cadastrarNovoUsuario() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'cadastrarNovoUsuario'");
-	}
-	
 	public boolean aceitarMonitor (Monitor monitor) {
 		return true;
 		

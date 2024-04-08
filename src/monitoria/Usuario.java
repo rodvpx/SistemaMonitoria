@@ -20,22 +20,27 @@ public abstract class Usuario {
 
 	public void cadastrarNovoUsuario(ArrayList<Usuario> usuarios) {
 		if (!validar()) {
-			System.out.println("Informações específicas inválidas.");
+			System.out.println("Erro: Informações inválidas.");
 			return;
 		}
-
-		// Verifica se o e-mail já está sendo usado
+	
+		// Verifica se o e-mail ou matrícula já estão sendo usados
 		for (Usuario usuario : usuarios) {
-			if (usuario.getEmail().equals(this.email) && usuario.getMatricula() == this.matricula) {
+			if (usuario.getEmail().equals(this.email)) {
 				System.out.println("Erro: Este e-mail já está cadastrado.");
 				return;
 			}
+			if (usuario.getMatricula().equals(this.matricula)) {
+				System.out.println("Erro: Esta matrícula já está cadastrada.");
+				return;
+			}
 		}
-
-		// Se todas as verificações passaram, adiciona o usuário à lista
+	
+		// Se passou pelas verificações, adiciona o novo usuário
 		usuarios.add(this);
 		System.out.println("Usuário cadastrado com sucesso.");
 	}
+	
 
 	public boolean login(String email, String senha) {
 
@@ -48,8 +53,6 @@ public abstract class Usuario {
 		}
 	}
 
-	abstract protected boolean cadastrarNovoUsuario();
-
 	public String getNome() {
 		return nome;
 	}
@@ -60,6 +63,7 @@ public abstract class Usuario {
 				return usuario;
 			}
 		}
+		System.out.println("Login invalido");
 		return null;
 	}
 

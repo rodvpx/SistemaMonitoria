@@ -45,7 +45,11 @@ public class App {
 
                     // Busca usuário com o email informado
                     Usuario usuario = Usuario.buscarPorEmail(usuarios, email);
-                    usuario.login(email, senha);
+                    if (usuario != null) {
+                        usuario.login(email, senha);
+                    } else {
+                        System.out.println("Login inválido. Por favor, verifique seu email e senha.");
+                    }
                     break;
 
                 case 2:
